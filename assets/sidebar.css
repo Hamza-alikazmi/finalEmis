@@ -18,13 +18,23 @@
 .nav a.active, .nav a:hover { background: rgba(58,111,248,0.1); color:var(--accent); transform: translateY(-1px); }
 
 /* Mobile Bottom Nav */
-.mobile-bottom-nav {
-  height: 65px;
-  z-index: 1000;
-  border-top: 1px solid rgba(0,0,0,0.1);
+/* Update this in your sidebar.css */
+.mobile-bottom-nav .nav-icon div { 
+    display: block !important; /* Force show the text labels */
+    font-size: 0.7rem; 
 }
-.mobile-bottom-nav .nav-icon { display:flex; flex-direction:column; align-items:center; justify-content:center; color:#666; font-size:0.85rem; transition:0.3s; }
-.mobile-bottom-nav .nav-icon.active { color:#1976d2; }
+
+.mobile-bottom-nav {
+    height: 75px; /* Increased slightly for text space */
+    z-index: 2000 !important; /* Higher than any table or modal */
+    background: white;
+}
+
+/* Ensure the horizontal scroll works for the Admin many-links */
+.mobile-bottom-nav .d-flex {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 /* Content padding-bottom to prevent overlap */
 @media (max-width: 991px) {
